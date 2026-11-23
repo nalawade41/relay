@@ -1,0 +1,4 @@
+# Private Claude Code notes and per-machine settings; never commit
+.claude/memory/
+.claude/settings.local.json
+.claude/
