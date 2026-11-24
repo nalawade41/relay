@@ -1,1 +1,2 @@
 # README
+Event delivery platform (a self-hosted webhook and notification service, in the vein of Svix or Hookdeck). Services post events to an API, which rate-limits, queues, and delivers them to subscriber endpoints with retries, backoff, and dead-lettering, plus a live delivery feed. Reason: receivers are flaky by nature, so failure and recovery are built into the domain, and it maps onto four or five standard system-design questions.
