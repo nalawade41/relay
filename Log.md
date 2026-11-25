@@ -34,6 +34,10 @@
 6. Record in Log.md
 7. Commit and Push
 
+### 25 Nov 2026 (normal day) - 5 Min
+
+1. Just updated the Log.md file and committed
+
 **Next (25 Nov, build day):** go through the Mat Ryer notes, then write an HTTP server with a health endpoint that answers curl. Minimum: a server that starts and answers one request.
 
 **Rest of the week:** Thu 26 reading day, second half of Mat Ryer's post with notes. Fri 27 build day, the event endpoint with validation. Sat 28 build day, tests for the validation, and buffer. Sun 29 check-in.
