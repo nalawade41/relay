@@ -6,7 +6,7 @@
 
 **Done when:**
 
-- [ ] The repo is public on GitHub, with a README paragraph saying what relay is.
+- [x] The repo is public on GitHub, with a README paragraph saying what relay is.
 - [ ] One command starts the API, and its health endpoint answers.
 - [ ] A valid event sent with curl is accepted.
 - [ ] An invalid event is rejected with a clear error.
@@ -50,6 +50,22 @@
 8. Added code to serve the `healthz` end point
 9. Updated LOG.md
 
-**Next (25 Nov, build day):** go through the Mat Ryer notes, then write an HTTP server with a health endpoint that answers curl. Minimum: a server that starts and answers one request.
+**Next (27 Nov, big day):** tests, the health endpoint checked with curl, then a review. Do the steps in order. Each one stands on its own, so stop wherever time ends and the rest moves to Saturday.
 
-**Rest of the week:** Thu 26 reading day, second half of Mat Ryer's post with notes. Fri 27 build day, the event endpoint with validation. Sat 28 build day, tests for the validation, and buffer. Sun 29 check-in.
+1. Start the server and call `/healthz` with curl. Ticks the second box above.
+2. Run `go vet ./...` and fix what it reports in `runner`. `go test` will not run that package until it is clean.
+3. Read, with notes in `reading/`: four sections of Mat Ryer's post: "Designing for testability", "What is the unit when unit testing?", "Testing with the run function", "Waiting for readiness".
+4. Write tests for the handler, encoder, middleware and router, then one test that starts the whole program through `run` and waits on `/healthz`.
+5. Measure coverage per package. Target: above 95%.
+6. Run the review skill.
+7. Fix what the review puts under "Fix before commit". Commit and push.
+
+**Look up if stuck (no notes needed):**
+
+- Calling a handler from a test: <https://pkg.go.dev/net/http/httptest>
+- Measuring coverage and seeing which lines are missed: <https://go.dev/blog/cover>
+- One test function, many cases: <https://go.dev/wiki/TableDrivenTests>
+
+**Minimum:** steps 1 and 2, plus one test for the health handler.
+
+**Rest of the week:** Sat 28 anything left from Friday first, then reading with notes: the sections of Mat Ryer's post from "Validating data" to "`sync.Once` to defer setup". Sun 29 check-in. The event endpoint with validation moves to the start of week 2.
