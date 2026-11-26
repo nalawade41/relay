@@ -34,9 +34,21 @@
 6. Record in Log.md
 7. Commit and Push
 
-### 25 Nov 2026 (normal day) - 5 Min
+### 25 Nov 2026 (Worst day) - 5 Min
 
 1. Just updated the Log.md file and committed
+
+### 26 Nov 2026 (Very Good day) - 70 Min
+
+1. Read thorugh notes on mat's blog
+2. Added main.go with runner
+3. Created config, encoder, handlers, middlweare, router, runner, server, store packages
+4. Added files in above created packages
+5. Added minimum code requried to build the project
+6. Added `/healthz` end point and its code
+7. Added code for server setup and middleware to log details
+8. Added code to serve the `healthz` end point
+9. Updated LOG.md
 
 **Next (25 Nov, build day):** go through the Mat Ryer notes, then write an HTTP server with a health endpoint that answers curl. Minimum: a server that starts and answers one request.
 
